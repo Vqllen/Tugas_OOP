@@ -1,5 +1,4 @@
 import javax.swing.*;
-
 import java.awt.*;
 
 public class App {
@@ -46,10 +45,12 @@ public class App {
         rightPanel.setPreferredSize(new Dimension(1000, 1000));
 
         JScrollPane scrollPane = new JScrollPane(rightPanel);
+        scrollPane.setBorder(null);
 
         JSplitPane splitpane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, scrollPane);
         splitpane.setDividerLocation(190);
         splitpane.setDividerSize(4);
+        splitpane.setBorder(null);
 
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
@@ -98,7 +99,9 @@ public class App {
         leftPanel.add(new Button("Favourites"));
         leftPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
+        frame.setUndecorated(true);
         setvisible(frame);
+
     }
 
     public static void setvisible(Window obj) {
